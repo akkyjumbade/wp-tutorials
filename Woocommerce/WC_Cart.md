@@ -7,41 +7,45 @@ $cart = WC()->cart;
 
 ```php
 // $cart conditionals (if)
-WC()->cart->is_empty()
-WC()->cart->needs_payment()
-WC()->cart->show_shipping()
-WC()->cart->needs_shipping()
-WC()->cart->needs_shipping_address()
-WC()->cart->display_prices_including_tax()
- 
+$cart->is_empty()
+$cart->needs_payment()
+$cart->show_shipping()
+$cart->needs_shipping()
+$cart->needs_shipping_address()
+$cart->display_prices_including_tax()
+```
+
+```php
 // Get $cart totals
-WC()->cart->get_cart_contents_count();
-WC()->cart->get_cart_subtotal();
-WC()->cart->subtotal_ex_tax;
-WC()->cart->subtotal;
-WC()->cart->get_displayed_subtotal();
-WC()->cart->get_taxes_total();
-WC()->cart->get_shipping_total();
-WC()->cart->get_coupons();
-WC()->cart->get_coupon_discount_amount( 'coupon_code' );
-WC()->cart->get_fees();
-WC()->cart->get_discount_total();
-WC()->cart->get_total();
-WC()->cart->total;
-WC()->cart->get_tax_totals();
-WC()->cart->get_cart_contents_tax();
-WC()->cart->get_fee_tax();
-WC()->cart->get_discount_tax();
-WC()->cart->get_shipping_total();
-WC()->cart->get_shipping_taxes();
-  
+$cart->get_cart_contents_count();
+$cart->get_cart_subtotal();
+$cart->subtotal_ex_tax;
+$cart->subtotal;
+$cart->get_displayed_subtotal();
+$cart->get_taxes_total();
+$cart->get_shipping_total();
+$cart->get_coupons();
+$cart->get_coupon_discount_amount( 'coupon_code' );
+$cart->get_fees();
+$cart->get_discount_total();
+$cart->get_total();
+$cart->total;
+$cart->get_tax_totals();
+$cart->get_cart_contents_tax();
+$cart->get_fee_tax();
+$cart->get_discount_tax();
+$cart->get_shipping_total();
+$cart->get_shipping_taxes();
+```
+
+```php
 // Loop over $cart items
-foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
    $product = $cart_item['data'];
    $product_id = $cart_item['product_id'];
    $quantity = $cart_item['quantity'];
-   $price = WC()->cart->get_product_price( $product );
-   $subtotal = WC()->cart->get_product_subtotal( $product, $cart_item['quantity'] );
+   $price = $cart->get_product_price( $product );
+   $subtotal = $cart->get_product_subtotal( $product, $cart_item['quantity'] );
    $link = $product->get_permalink( $cart_item );
    // Anything related to $product, check $product tutorial
    $attributes = $product->get_attributes();
@@ -50,33 +54,36 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
    $any_attribute = $cart_item['variation']['attribute_whatever'];
    $meta = wc_get_formatted_cart_item_data( $cart_item );
 }
- 
+```
+
+```php
 // Get $cart customer billing / shipping
-WC()->cart->get_customer()->get_billing_first_name();
-WC()->cart->get_customer()->get_billing_last_name();
-WC()->cart->get_customer()->get_billing_company();
-WC()->cart->get_customer()->get_billing_email();
-WC()->cart->get_customer()->get_billing_phone();
-WC()->cart->get_customer()->get_billing_country();
-WC()->cart->get_customer()->get_billing_state();
-WC()->cart->get_customer()->get_billing_postcode();
-WC()->cart->get_customer()->get_billing_city();
-WC()->cart->get_customer()->get_billing_address();
-WC()->cart->get_customer()->get_billing_address_2();
-WC()->cart->get_customer()->get_shipping_first_name();
-WC()->cart->get_customer()->get_shipping_last_name();
-WC()->cart->get_customer()->get_shipping_company();
-WC()->cart->get_customer()->get_shipping_country();
-WC()->cart->get_customer()->get_shipping_state();
-WC()->cart->get_customer()->get_shipping_postcode();
-WC()->cart->get_customer()->get_shipping_city();
-WC()->cart->get_customer()->get_shipping_address();
-WC()->cart->get_customer()->get_shipping_address_2();
- 
+$cart->get_customer()->get_billing_first_name();
+$cart->get_customer()->get_billing_last_name();
+$cart->get_customer()->get_billing_company();
+$cart->get_customer()->get_billing_email();
+$cart->get_customer()->get_billing_phone();
+$cart->get_customer()->get_billing_country();
+$cart->get_customer()->get_billing_state();
+$cart->get_customer()->get_billing_postcode();
+$cart->get_customer()->get_billing_city();
+$cart->get_customer()->get_billing_address();
+$cart->get_customer()->get_billing_address_2();
+$cart->get_customer()->get_shipping_first_name();
+$cart->get_customer()->get_shipping_last_name();
+$cart->get_customer()->get_shipping_company();
+$cart->get_customer()->get_shipping_country();
+$cart->get_customer()->get_shipping_state();
+$cart->get_customer()->get_shipping_postcode();
+$cart->get_customer()->get_shipping_city();
+$cart->get_customer()->get_shipping_address();
+$cart->get_customer()->get_shipping_address_2();
+```
+```php 
 // Other stuff
-WC()->cart->get_cross_sells();
-WC()->cart->get_cart_item_tax_classes_for_shipping();
-WC()->cart->get_cart_hash();
-WC()->cart->get_customer();
+$cart->get_cross_sells();
+$cart->get_cart_item_tax_classes_for_shipping();
+$cart->get_cart_hash();
+$cart->get_customer();
 
 ```

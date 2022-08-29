@@ -4,7 +4,9 @@
 // Get Order ID and Key
 $order->get_id();
 $order->get_order_key();
- 
+```
+
+```php 
 // Get Order Totals $0.00
 $order->get_formatted_order_total();
 $order->get_cart_tax();
@@ -34,7 +36,9 @@ $order->get_total_refunded_for_item();
 $order->get_tax_refunded_for_item();
 $order->get_total_tax_refunded_by_rate_id();
 $order->get_remaining_refund_amount();
-  
+```
+
+```php  
 // Get and Loop Over Order Items
 foreach ( $order->get_items() as $item_id => $item ) {
    $product_id = $item->get_product_id();
@@ -51,7 +55,9 @@ foreach ( $order->get_items() as $item_id => $item ) {
    $somemeta = $item->get_meta( '_whatever', true );
    $item_type = $item->get_type(); // e.g. "line_item"
 }
- 
+```
+
+```php
 // Other Secondary Items Stuff
 $order->get_items_key();
 $order->get_items_tax_classes();
@@ -59,23 +65,32 @@ $order->get_item_count();
 $order->get_item_total();
 $order->get_downloadable_items();
 $order->get_coupon_codes();
-  
+```
+
+```php
 // Get Order Lines
 $order->get_line_subtotal();
 $order->get_line_tax();
 $order->get_line_total();
-  
+```
+
+
+```php  
 // Get Order Shipping
 $order->get_shipping_method();
 $order->get_shipping_methods();
 $order->get_shipping_to_display();
-  
+```
+
+```php
 // Get Order Dates
 $order->get_date_created();
 $order->get_date_modified();
 $order->get_date_completed();
 $order->get_date_paid();
-  
+```
+
+```php
 // Get Order User, Billing & Shipping Addresses
 $order->get_customer_id();
 $order->get_user_id();
@@ -111,12 +126,17 @@ $order->get_formatted_billing_full_name();
 $order->get_formatted_shipping_full_name();
 $order->get_formatted_billing_address();
 $order->get_formatted_shipping_address();
-  
+
+```
+
+```php
 // Get Order Payment Details
 $order->get_payment_method();
 $order->get_payment_method_title();
 $order->get_transaction_id();
-  
+```
+
+```php
 // Get Order URLs
 $order->get_checkout_payment_url();
 $order->get_checkout_order_received_url();
@@ -125,10 +145,15 @@ $order->get_cancel_order_url_raw();
 $order->get_cancel_endpoint();
 $order->get_view_order_url();
 $order->get_edit_order_url();
+```
   
+```php
 // Get Order Status
 $order->get_status();
- 
+```
+
+
+```php 
 // Get Thank You Page URL
 $order->get_checkout_order_received_url();
 ```
