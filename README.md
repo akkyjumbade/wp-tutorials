@@ -1,2 +1,2 @@
-# wp-tutorials
+# WP tutorials
 WP Tutorials
